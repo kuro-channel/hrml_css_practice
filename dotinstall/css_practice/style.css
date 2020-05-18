@@ -1,0 +1,105 @@
+main {
+    font-size: 32px;
+    /**line-height: 2em; */ /** font-size:16px * 2*/
+    line-height: 2; /** emをつけないと、子要素には継承されない*/
+}
+
+section {
+    font-size: 16px;
+    /** line-heightが継承されて64pxになる*/
+    /** 親要素のline-heightにemがついてない場合は、継承されず、子要素側で再計算
+    この場合であれば、16 * 2 = 32px*/
+}
+
+img {
+    /** vertical-align: baselineという基準線がある！*/
+    vertical-align: middle;
+    /** middle, top, bottom */
+}
+
+ul {
+    /*list-style-type: circle;*/
+    /*list-style-position: inside;*/
+    /*list-style-image: url("images/icon.png");*/
+    /** 一括指定プロパティ*/
+    list-style: circle inside url("images/icon.png");
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+.box {
+    background-color: red;
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+}
+
+.box4 {
+    background-color: orange;
+    width: 100px;
+    height: 100px;
+}
+
+.box5 {
+    background-color: skyblue;
+    width: 100px;
+    height: 100px;
+}
+
+.box6 {
+    background-color: tomato;
+    width: 100px;
+    height: 100px;
+}
+
+.btn {
+    width: 100px;
+    background-color: skyblue;
+    text-align: center;
+    padding: 4px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer; /** よく使う！*/
+}
+
+.btn:hover {
+    opacity: 0.8; /** よく使う！*/
+}
+
+/** 同じ階層の中で要素の順番を指定できる「:nth-child」 */
+.test >:nth-child(1){
+    background: tomato;
+}
+
+.test >:nth-child(2n){
+    background: skyblue;
+}
+
+/** 要素の違いも考慮したい場合: 「nth-of-type」*/
+.test1 > h2:nth-of-type(1) {
+    background: orange;
+}
+
+.test1 > h2:nth-of-type(2n) {
+    background: aquamarine;
+}
+
+.test1 > h2:first-of-type{
+    background: pink;
+}
+
+.test1 > h2:last-of-type {
+    background: yellow;
+}
+
+/** 空の要素をスタイリング: 「:empty」 */
+.test2 li:empty {
+    background: aqua;
+}
+
+/** 否定： 「:not(:empty)」 */
+.test2 li:not(:empty) {
+    background: blueviolet;
+}
