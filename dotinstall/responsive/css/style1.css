@@ -1,0 +1,46 @@
+/** モバイルファースト： ブラウザ幅の条件を小さい順に書く */
+/** common: 共通のスタイルを書いていく */
+/** small screen */
+body {
+    margin: 0;
+}
+
+.image {
+    background: pink;
+    height: 100px;
+}
+
+.text {
+    background: gray;
+    height: 100px;
+}
+
+aside {
+    display: none;
+}
+
+/** medium screen */
+@media (min-width: 600px)  {
+    section {
+        display: flex;
+    }
+    .image {
+        width: 200px;
+    }
+    .text {
+        flex: 1;
+    }
+}
+
+/** large screen */
+@media (min-width: 800px)  {
+    section {
+        width: 800px;
+        margin: 0 auto;
+    }
+    aside {
+        display: block;
+        width: 160px;
+        background: skyblue;
+    }
+}
